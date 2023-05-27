@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
 
   <?php include('./components/script.php') ?>
 </body>
-<footer class="text-center text-white" style="background-color: 	#343A40;">
+<footer class="text-center text-white" style="background-color: #343A40; position:absolute; bottom:0; width:100%; ">
   <!-- Grid container -->
   <div class="container pt-4">
     <!-- Section: Social media -->

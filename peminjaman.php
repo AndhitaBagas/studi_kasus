@@ -1,7 +1,8 @@
 <?php
-require_once('./config/connection.php');
 session_start();
-if (!isset($_SESSION['username']) || empty($_SESSION)) {
+require_once('./config/connection.php');
+
+if (!isset($_SESSION['username'])) {
   header('location: login.php');
 }
 
@@ -40,6 +41,7 @@ $result = $conn->query($sql);
           <th scope="col">Judul Buku</th>
           <th scope="col">Tanggal Peminjaman</th>
           <th scope="col">Tanggal Pengembalian</th>
+          <th scope="col">Opsi Menu Lain Data Peminjaman</th>
         </tr>
       </thead>
       <tbody>
@@ -53,7 +55,12 @@ $result = $conn->query($sql);
               <td><?php echo $row['nama_buku'] ?></td>
               <td><?php echo $row['tanggal_pinjam'] ?></td>
               <td><?php echo $row['tanggal_kembali'] ?></td>
+              <td>
+                <a href="./edit_peminjaman.php?id=<?= $row['id_peminjaman'] ?>" class="btn btn-primary">Edit</a>
+                <a href="delete.php?tabel=peminjaman&id=<?= $row['id_peminjaman'] ?>" class="btn btn-danger">Hapus</a>
+              </td>
             </tr>
+
           <?php
           }
         } else {
@@ -67,45 +74,43 @@ $result = $conn->query($sql);
       </tbody>
     </table>
   </div>
+  <footer class="text-center text-white" style="background-color: 	#343A40;">
 
-  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-  <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
-  <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./node_modules/admin-lte/dist/js/adminlte.min.js"></script>
+    <!-- Grid container -->
+    <div class="container pt-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+        <!-- Github -->
+        <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center text-white bg-dark" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white bg-dark" href="https://mdbootstrap.com/">Andhita Bagas</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <?php include('./components/script.php')
+  ?>
+
 </body>
-<footer class="text-center text-white" style="background-color: 	#343A40;">
-  <!-- Grid container -->
-  <div class="container pt-4">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-
-      <!-- Twitter -->
-      <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-
-      <!-- Google -->
-      <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-
-      <!-- Linkedin -->
-      <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-      <!-- Github -->
-      <a class="btn btn-link btn-floating btn-lg text-white bg-dark" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
-    </section>
-    <!-- Section: Social media -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center text-white bg-dark" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-white bg-dark" href="https://mdbootstrap.com/">Andhita Bagas</a>
-  </div>
-  <!-- Copyright -->
-</footer>
 
 </html>

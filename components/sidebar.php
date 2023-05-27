@@ -12,7 +12,7 @@
   </div>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div style="background-color: #343A40; position:absolute; bottom:0; width:100%;" class="sidebar">
     <!-- Sidebar user panel -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">

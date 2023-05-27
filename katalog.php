@@ -7,6 +7,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION)) {
 
 $sql = "SELECT * FROM buku ORDER BY id_buku ASC";
 $result = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +42,7 @@ $result = $conn->query($sql);
           <th scope="col">Penerbit Buku</th>
           <th scope="col">Pengarang Buku</th>
           <th scope="col">Tahun Terbit</th>
+          <th scope="col">Opsi Menu Lain Data Buku</th>
 
         </tr>
       </thead>
@@ -55,6 +57,10 @@ $result = $conn->query($sql);
               <td><?php echo $row['nama_penerbit'] ?></td>
               <td><?php echo $row['nama_penulis'] ?></td>
               <td><?php echo $row['tahun_terbit'] ?></td>
+              <td>
+                <a href="edit_katalog.php?id=<?php echo $row['id_buku'] ?>" class="btn btn-primary">Edit</a>
+                <a href="delete.php?tabel=buku&id=<?php echo $row['id_buku'] ?>" class="btn btn-danger">Delete</a>
+              </td>
 
             </tr>
         <?php

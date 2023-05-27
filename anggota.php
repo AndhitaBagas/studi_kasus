@@ -39,6 +39,7 @@ $result = $conn->query($sql);
           <th scope="col">Nama Anggota</th>
           <th scope="col">Jenis Kelamin</th>
           <th scope="col">Alamat</th>
+          <th scope="col">Opsi Menu Lain Data Anggota</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +52,10 @@ $result = $conn->query($sql);
               <td><?php echo $row['nama'] ?></td>
               <td><?php echo $row['jenis_kelamin'] ?></td>
               <td><?php echo $row['alamat'] ?></td>
+              <td>
+                <a href="edit_anggota.php?id=<?php echo $row['id_anggota'] ?>" class="btn btn-primary">Edit</a>
+                <a href="delete.php?tabel=anggota&id=<?php echo $row['id_anggota'] ?>" class="btn btn-danger">Hapus</a>
+              </td>
             </tr>
         <?php
           }
