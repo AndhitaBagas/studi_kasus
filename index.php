@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) {
   <link rel="stylesheet" href="./node_modules/admin-lte/dist/css/adminlte.min.css" />
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-  <title>E-Library</title>
+  <title>My-Library</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@ if (!isset($_SESSION['username'])) {
   <?php include('./components/sidebar.php') ?>
 
   <div class="container">
-    <h1 class="text-center">Selamat Datang di E-Library</h1>
+    <h1 class="text-center">Selamat Datang di My-Library</h1>
   </div>
 
   <?php include('./components/script.php') ?>

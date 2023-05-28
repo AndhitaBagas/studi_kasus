@@ -4,7 +4,7 @@
   <div class="brand-link d-flex justify-content-between align-items-center">
     <a href="#" class="brand-link">
       <img src="./assets/img/book-stack.png" alt="E-lib" class="brand-image img-circle elevation-3" style="opacity: 0.7" width="50px" />
-      <span class="brand-text font-weight-light"> E-Library </span>
+      <span class="brand-text font-weight-light"> My-Library </span>
     </a>
     <a href="#" data-widget="pushmenu" role="button" class="pushmenu">
       <i class="fas fa-bars"></i>
